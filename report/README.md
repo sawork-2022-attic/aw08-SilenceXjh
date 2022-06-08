@@ -1,0 +1,3 @@
+因为spring架构中web与gateway不兼容，因此需要将示例代码代码中的web依赖换为webflux，然后在inGate和outGate中作一些小的调整，大体上还是跟示例代码一致。建立一个channel,一个inGate和一个outGate，localhost:8080端口的gateway服务接受请求，通过inGate传到channel里，接着通过outGate传到localhost:5555端口上的delivery服务。
+
+通过这套消息驱动的integration机制，可以实现不同系统之间以松耦合的方式合作。各个系统独立设计，无需考虑其他系统是以何种方式产生或接收数据。这种技术对于企业间的合作、复用已有系统都有很大助益，大大提升开发效率。
